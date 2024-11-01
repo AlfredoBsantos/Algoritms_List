@@ -1,0 +1,81 @@
+/*11. Elabore um algoritmo que:
+- Crie o registro tAluno:
+Registro tAluno:
+nome: string
+matriculaDoAluno: int
+- Declare um vetor Alunos (3 posições de tAluno) e cadastre 3 alunos no vetor Alunos;
+- Após o cadastro, escreva os dados de todos os alunos cadastrados;
+- Crie o registro tDisciplina:
+Registro tDisciplina: Obs: o usuário não deverá
+matriculaDoAluno: int digitar o valor do campo media.
+disciplina: string O sistema deverá calcular
+nota1: float automaticamente a média
+nota2: float aritmética das duas notas do
+media: float aluno e armazenar neste campo.
+- Crie o vetor Disciplinas (12 posições de tDisciplina) e cadastre, para cada um dos 3 alunos
+existentes no vetor Alunos, 4 disciplinas com as respectivas informações. Lembre-se que a
+matrícula do aluno tem que ser a mesma cadastrada no vetor Alunos.
+- Informe o seguinte menu e proceda com a operação de acordo com a escolha do usuário:
+ MENU PRINCIPAL
+----------------------------------------------
+1 – EXIBIR DADOS DE UM ALUNO
+2 – EXIBIR MAIOR MEDIA
+
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct tAluno {
+    string nome;
+    int matriculaDoAluno;
+};
+
+struct tDisciplina {
+    string disciplina;
+    int matriculaDoAluno; // matrícula do aluno para associar à disciplina
+    float nota1;
+    float nota2;
+};
+
+int main() {
+    tAluno aluno[3];
+    tDisciplina disciplina[12];
+
+    // Cadastro dos alunos
+    for(int i = 0; i < 3; i++){
+        cout << "Informe o nome do aluno: ";
+        cin.ignore(); // Para limpar o buffer antes de getline
+        getline(cin, aluno[i].nome);
+        cout << "Informe a matricula do aluno: ";
+        cin >> aluno[i].matriculaDoAluno;
+    }
+
+    // Exibindo os alunos cadastrados
+    cout << "Esses sao os alunos cadastrados: " << endl;
+    for(int i = 0; i < 3; i++){
+        cout << "Nome: " << aluno[i].nome << endl;
+        cout << "Matricula: " << aluno[i].matriculaDoAluno << endl;
+    }
+
+    // Cadastro das disciplinas
+    for(int i = 0; i < 12; i++){
+        cout << "Informe a disciplina: ";
+        cin.ignore(); // Limpar o buffer antes de getline
+        getline(cin, disciplina[i].disciplina);
+        
+        cout << "Informe a matricula do aluno para essa disciplina: ";
+        cin >> disciplina[i].matriculaDoAluno;
+        
+        cout << "Informe a nota1: ";
+        cin >> disciplina[i].nota1;
+        
+        cout << "Informe a nota2: ";
+        cin >> disciplina[i].nota2;
+    }
+
+    return 0;
+}
+
+
