@@ -1,0 +1,53 @@
+//15. Elabore um algoritmo que leia dois vetores de mesmo tamanho M e N, sendo M contendo as matrículas dos alunos (inteiros) e N suas respectivas notas (o tamanho deve ser digitado pelo usuário). Calcule a média de todas as notas de N. Escreva primeiramente o conjunto das notas maiores do que a média calculada. Em seguida, escreva as matrículas dos alunos cujas notas foram menores do que a média. 
+
+#include <iostream>
+using namespace std;
+int main() { 
+
+  int M, N, i, j;
+  float media, soma=0;
+
+  
+  
+
+  cout<<"Digite a quantidade de alunos:" << endl;
+    cin>>M;
+      N=M;
+    int vetor1[M];
+    float vetor2[N];
+
+  cout<< "Digite as matriculas dos alunos:" << endl;
+
+    for (i=0; i<M; i++){
+      cin >> vetor1[i];
+      
+    }
+   
+
+  cout << "Digite as notas dos alunos:" << endl;
+    for (j=0; j<N; j++){
+      cin >> vetor2[j];
+      soma=soma+vetor2[j];
+    }
+  media=soma/N;
+
+  cout << "A media das notas eh:" << media << endl;
+  cout << "As notas maiores que a media sao:" << endl;
+    for (j=0; j<M; j++){
+      if (vetor2[j]>media){
+        cout << vetor2[j] << endl;
+      }
+    }
+  cout << "As matriculas dos alunos com notas menores que a media sao:";
+    for (j=0; j<M; j++){
+      if (vetor2[j]<media){
+        cout << vetor1[j] << endl;
+        
+      } 
+    }
+  
+  
+    
+  
+
+}
