@@ -1,0 +1,26 @@
+//Elabore um algoritmo que leia uma cadeia de caracteres (máximo 40 caracteres) inverta-a armazenando em outra variável e em seguida mostre a variável com a cadeia invertida. Por exemplo, ao receber a string "eajufrn", o algoritmo deverá mostrar como saída a string "nrfu-jae".
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    char cadeia[41]; // 40 caracteres + 1 para o caractere nulo
+    char cadeiaInvertida[41];
+    int i, j, tamanho;
+  
+    cout << "Digite uma cadeia de caracteres (maximo 40 caracteres): ";
+    cin.getline(cadeia, 41); // Use getline para garantir que espaços sejam considerados
+
+    tamanho = strlen(cadeia);
+
+    // Inverte a cadeia de caracteres
+    for(i = tamanho - 1, j = 0; i >= 0; i--, j++) {
+        cadeiaInvertida[j] = cadeia[i];
+    }
+    cadeiaInvertida[j] = '\0'; // Adiciona o caractere nulo ao final da string invertida
+
+    cout << "Cadeia invertida: " << cadeiaInvertida << endl;
+
+    return 0;
+}
