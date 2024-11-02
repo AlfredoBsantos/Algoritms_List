@@ -1,0 +1,51 @@
+/*Questão: Busca em Vetor
+
+Escreva um programa em C++ que realize a busca de um número específico em um vetor de inteiros. O programa deve seguir os seguintes passos:
+
+1. Solicitar ao usuário que insira 10 números inteiros para preencher um vetor.
+2. Solicitar ao usuário que insira um número inteiro a ser procurado no vetor.
+3. Implementar uma função chamada `acharNum` que receba o vetor, o tamanho do vetor e o número a ser procurado. A função deve:
+   - Percorrer o vetor e verificar se o número procurado está presente.
+   - Se o número for encontrado, exibir a posição (índice) no vetor e o valor encontrado.
+   - Se o número não for encontrado, exibir uma mensagem informando que o número não está presente no vetor.
+*/
+
+
+#include <iostream>
+using namespace std;
+
+void acharNum(int *vetor, int tamanho, int num);
+
+int main() {
+  int vetor[10];
+  int num;
+
+  cout << "insira 10 números no vetor: " << endl;
+  for (int i = 0; i < 10; ++i) {
+    cin >> vetor[i];
+  }
+
+  cout << "insira o número que você quer procurar no vetor:";
+  cin >> num;
+
+  acharNum(vetor, 10, num);
+
+  return 0;
+}
+
+void acharNum(int *vetor, int tamanhoEncon, int num) {
+  bool ValorEncontrado = false;
+
+  for (int i = 0; i < tamanhoEncon; ++i) {
+    if (*(vetor + i) == num) {
+      cout << "O número foi localizado na posição:" << i << endl;
+      cout << "Conteudo: " << *(vetor + i) << endl;
+      ValorEncontrado = true;
+      break;
+    }
+  }
+
+  if (!ValorEncontrado) {
+    cout << "O número não foi localizado no vetor." << endl;
+  }
+}
