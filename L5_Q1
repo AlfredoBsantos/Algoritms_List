@@ -1,0 +1,42 @@
+//Elabore um algoritmo que leia uma matriz M(6,6) e um valor A inteiro e multiplique a matriz M pelo valor A inserindo os resultados em um vetor de V(36). Ao final, escreva o vetor V. 
+
+#include <iostream>
+using namespace std;
+int main() { 
+  int M[6][6], A, V[36], i, j, k=0;
+
+  cout<<"digite os valores da matriz M: \n";
+  for(i=0; i<6; i++){
+    for(j=0; j<6; j++){
+      cin>>M[i][j];
+    }
+  }
+  
+  
+  cout<<" esses sao os elementos da matriz M:\n";
+    for(i=0; i<6; i++){
+      for(j=0; j<6; j++){
+        
+        cout<<M[i][j]<<" ";
+      }  
+      cout<<"\n";
+    }
+      
+    
+  cout<<"Qual valor voce deseja multiplicas a matriz M?\n";
+  cin>>A;
+    for(i=0; i<6; i++){
+      for(j=0; j<6; j++){
+            V[k]=M[i][j]*A;
+            k++;
+          }
+        
+      }
+    cout<<"o Vetor V é:\n";
+      for(i=0; i<36; i++){
+        cout<<V[i];
+      }
+
+  
+    
+}
