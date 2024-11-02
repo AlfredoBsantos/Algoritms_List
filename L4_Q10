@@ -1,0 +1,46 @@
+//10. Sejam A e B dois vetores contendo 10 elementos inteiros. Elabore um algoritmo que:
+//a. Leia A e B.
+//b. Calcule a soma dos elementos de A.
+//c. Crie o vetor C contendo a soma dos elementos de mesma posição dos vetores A e B.
+//d. Calcule quantos elementos de A são maiores que a soma dos elementos de B.
+
+#include <iostream>
+using namespace std;
+int main() { 
+  int A[10], B[10], C[10], somaA=0, somaB=0, cont=0;
+
+    cout<<"Informe os valores do vetor A: "<<endl;
+    for(int i=0; i<10; i++){
+      cin>>A[i];
+      
+    }
+    cout<<"Informe os valores do vetor B: "<<endl;
+    for( int i=0; i<10; i++){
+      cin>>B[i];
+    }
+   
+    for(int i=0; i<10; i++){
+      somaA=somaA+A[i];
+      somaB=somaB+B[i];
+
+      if(A[i]>somaB){
+        cont++;
+      }
+    } 
+  cout<<"A soma dos elementos de A eh: "<<endl;
+  cout<<somaA<<endl;
+  cout<<"A quantidade de elementos de A maioires que a soma dos elementos de B eh:\n"<<cont<<endl;;
+  
+  
+    cout<<"A soma dos elementor A+B=(C) eh: "<<endl;
+    for(int i=0; i<10; i++){
+      C[i]=A[i]+B[i];
+      cout<< C[i]<<endl;
+    }
+
+  
+    
+
+
+  
+}
