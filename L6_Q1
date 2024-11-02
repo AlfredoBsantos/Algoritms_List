@@ -1,0 +1,49 @@
+/*Elabore um algoritmo preencha o cadastro de 10 alunos contendo matricula, nome,
+endereço e média geral. Após o preenchimento, deve ser somado o valor 0,5 às médias de
+todos os alunos que tiveram médias maiores que 5. Em seguida escreva o vetor final. */
+
+#include <iostream>
+using namespace std;
+
+struct aluno{
+  int matricula;
+  string nome;
+  string endereco;
+  float media;
+
+};
+
+int main() { 
+  
+  
+  
+  aluno alunos[5];
+  
+
+
+  
+  for(int i=0; i<5; i++){
+    cout<<"digite a matricula: \n";
+    cin>>alunos[i].matricula;
+    cout<<"digite o nome: \n";
+    cin>>alunos[i].nome;
+    cout<<"digite o endereco \n";
+    cin>>alunos[i].endereco;
+    cout<<"digite a media \n";
+    cin>>alunos[i].media;
+  
+  }
+
+  for(int i=0; i<5; i++){
+    if(alunos[i].media>5){
+      alunos[i].media+=(0.5);
+    }
+    cout<<"matricula: \n"<<alunos[i].matricula;  
+    cout<<"nome: \n"<<alunos[i].nome;
+    cout<<"endereco: \n"<<alunos[i].endereco;
+    cout<<"media: \n"<<alunos[i].media;
+    
+  }
+  
+
+}
