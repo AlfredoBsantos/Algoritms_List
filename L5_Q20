@@ -1,0 +1,29 @@
+//20. Elabore um algoritmo que receba um nome completo em uma string e apresente apenas o último nome e o 1º nome na seguinte forma: último nome, 1º nome.
+//Entrada: Ana Fernandes Oliveira
+//Saída: Oliveira, Ana 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() { 
+    string nomecompleto, ultimonome, primeironome;
+    size_t posPrimeiroEspaco, posUltimoEspaco;
+
+    cout << "Digite seu nome completo: ";
+    getline(cin, nomecompleto);
+
+    posPrimeiroEspaco = nomecompleto.find(' ');
+    posUltimoEspaco = nomecompleto.rfind(' ');
+
+    if (posPrimeiroEspaco != string::npos && posUltimoEspaco != string::npos) {
+        primeironome = nomecompleto.substr(0, posPrimeiroEspaco);
+        ultimonome = nomecompleto.substr(posUltimoEspaco + 1);
+
+        cout << ultimonome << ", " << primeironome << endl;
+    } else {
+        cout << "Nome completo inválido. Certifique-se de incluir pelo menos um espaço." << endl;
+    }
+
+    return 0;
+}
