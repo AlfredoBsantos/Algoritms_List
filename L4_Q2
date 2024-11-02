@@ -1,0 +1,30 @@
+//Elabore um algoritmo que leia e mostre um vetor de 20 elementos inteiros. A seguir, conte quantos valores pares existem no vetor e troque cada um desses elementos por 0. Em seguida escreva o vetor final. 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int vet[20], i, cont=0;
+
+  cout<< "Informe 20 valores: "<<endl;
+  
+  for(i=0; i<20; i++){
+    cin>>vet[i];
+  }
+  
+  for(i=0; i<20; i++){
+    if(vet[i]%2==0){
+      vet[i]=0;
+      cont++;
+    }
+  
+  }
+  cout<< "O vetor final é: "<<endl;
+  for(i=0; i<20; i++){
+    cout<<vet[i]<<" ";
+  }
+  cout<<endl;
+  cout<<"Quantidade de numeros pares do vetor:" <<cont<< " ";
+  
+}
