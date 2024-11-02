@@ -1,0 +1,79 @@
+//21. Elabore um algoritmo que gere automaticamente um vetor de 30 elementos contendo a sequencia de 7 números inteiros escolhida pelo usuário no menu abaixo:
+//Menu Principal
+//------------------------------------------------------
+//1 - Sequência de Fibonacci
+//2 - Números Triangulares
+//3 - Números Primos
+//4 - Números Quadrangulares
+//5 - Divisíveis por 3 e 5 simultaneamente
+//6 - Sair
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int numeroTriangular(int n) {
+  return n * (n + 1) / 2;
+}
+
+bool ehPrimo(int n){
+  if (n <= 1)
+    return false;
+  if (n <=3)
+    return true;
+  if ( n % 2 == 0 ||  n % 3 == 0) 
+    return false;
+  for (int i = 2; i <= sqrt(n); i++){
+    if (n % i == 0)
+      return false;}
+  return true;
+    
+}
+
+int main() {
+  
+  
+  int vetor[30], n, opcao;
+
+  cout << "Menu Principal" << endl;
+  cout << "------------------------------------------------------" << endl;
+  cout << "1 - Sequência de Fibonacci" << endl;
+  cout << "2 - Números Triangulares" << endl;
+  cout << "3 - Números Primos" << endl;
+  cout << "4 - Números Quadrangulares" << endl;
+  cout << "5 - Divisíveis por 3 e 5 simultaneamente" << endl;
+  cout << "6 - Sair" << endl;
+  cout << "------------------------------------------------------" << endl;
+  cout << "Escolha uma opção: ";
+  cin >> opcao;
+  switch (opcao){
+    case 1:
+      for (n=0; n<30; n++){
+        vetor[n] = fibonacci(n);
+        cout << vetor[n] << " ";
+        
+      }
+      break;
+    case 2:
+      for (n=0; n<30; n++){
+        vetor[n] = numeroTriangular(n);
+        cout<< vetor[n] << " ";
+      }
+      break;
+    case 3:
+          for (n =0; n<30; ++n) {
+              if ((vetor[n])==(ehPrimo(n))) {
+              
+                  cout << n << " ";
+              }
+        ;
+      }
+  }
+  
+}
