@@ -1,0 +1,63 @@
+/*Questão: Validação de Login e Senha
+
+Escreva um programa em C++ que solicite ao usuário um login e uma senha, permitindo até três tentativas para a entrada correta. O login é composto por cinco caracteres e a senha é um número inteiro. O programa deve seguir os seguintes passos:
+
+1. Solicitar ao usuário que insira um login de cinco caracteres.
+2. Solicitar ao usuário que insira uma senha numérica.
+3. Verificar se o login inserido é igual a "admin" e a senha é igual a 1234.
+4. Caso o login ou a senha estejam incorretos, o usuário terá mais duas tentativas (totalizando três tentativas).
+5. Se, após três tentativas, o login ou a senha ainda estiverem incorretos, o programa deve encerrar.
+
+### Exemplo de Entrada:
+```
+Digite o login:
+a d m i n
+Digite a senha:
+1234
+```
+
+### Exemplo de Saída:
+```
+saiu do laco
+admin1234
+```
+
+### Condições:
+- O programa deve permitir até três tentativas de login e senha.
+- O login deve ser exatamente "admin" e a senha deve ser exatamente 1234.
+- Utilize uma estrutura de repetição para controlar o número de tentativas.
+
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int cont = 0, senha;
+    char log1 = 0, log2 = 0, log3 = 0, log4 = 0, log5 = 0;
+    bool tentativas = true;
+
+    do {
+        cout << "Digite o login: \n";
+        cin >> log1;
+        cin >> log2;
+        cin >> log3;
+        cin >> log4;
+        cin >> log5;
+
+        cout << "Digite a senha: \n";
+        cin >> senha;
+
+        cont++;
+        if (cont == 3) {
+            tentativas = false;
+        }
+
+    } while (!((log1 == 'a') && (log2 == 'd') && (log3 == 'm') && (log4 == 'i') && (log5 == 'n') && (senha == 1234)) && tentativas);
+
+    cout << "saiu do laco" << endl;
+
+    cout << log1 << log2 << log3 << log4 << log5 << senha;
+
+    return 0;
+}
